@@ -1,0 +1,233 @@
+@media all and (min-width: 0px) {
+  .custom-center-btn {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .claim-container {
+    margin-top: 150px;
+  }
+  .customise-section {
+    top: 100px;
+  }
+
+  .rate-figure {
+    color: #27e92a;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    margin: 10x auto;
+  }
+
+  .userAcctInfo {
+    background-color: #c3c3c3;
+    color: #33334b;
+    font-weight: 500;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    border: 5px solid #33334b;
+    /* right: 27px; */
+    /* width: 95px; */
+    margin: 0 auto;
+  }
+
+  .currencyName {
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Courier New", Courier, monospace;
+    text-decoration: italic;
+    /* border-bottom: 2px solid #ffffff !important; */
+  }
+
+  .currencyAmt {
+    font-weight: 700;
+    color: #075108;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .min-max_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    margin: 35px auto !important;
+    width: 100%;
+  }
+  .min-max_mobile p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: yellow;
+  }
+
+  .min-max_desktop {
+    display: none;
+  }
+
+  /* Styling Purchase component */
+
+  .customise-section {
+    position: relative;
+    /* background: url('http://i.imgur.com/k8BtMvj.jpg'); */
+    top: 230px;
+    background-size: cover;
+    height: 200px;
+  }
+  .customise-section svg {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+    fill: #c3c3c3;
+    /* fill: #33334B; */
+    /* border: 8px inset #fff; */
+    border-radius: 12px;
+    /* background-color: #c3c3c3; */
+  }
+
+  .claim-container {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 300px;
+  }
+
+  .claim-text {
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-family: "Courier New", Courier, monospace !important;
+  }
+
+  .chart-box {
+    width: 100%;
+    max-width: 240px !important;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 22px;
+    z-index: 2;
+  }
+
+  .customise-row {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .customise-container,
+  .customise-section {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .customise-purchase {
+    text-align: center;
+    padding: 60px 20px;
+    /* width: 300px; */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+  }
+
+  .purchase-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px 0 40px 0;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .btn-buy {
+    margin: 12px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .spinner-img {
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    margin: 0px 29px;
+  }
+
+  .spinner-claim-img {
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    margin: 0px 18px;
+  }
+
+  .customise-section {
+    margin-top: 100px;
+  }
+
+  .connect-wallet-container {
+    text-align: center;
+  }
+
+  /* Styling Footer component */
+  .footer {
+    margin-top: 600px;
+  }
+
+  .customise-terms {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (min-width: 429px) {
+  /* Styling Footer component */
+  .footer {
+    text-align: center;
+  }
+}
+@media all and (min-width: 520px) {
+  .min-max_desktop {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 35px auto;
+    color: yellow;
+    width: 100%;
+    text-align: center;
+  }
+
+  .min-max_mobile {
+    display: none;
+  }
+}
+
+@media all and (min-width: 679px) {
+  /* Styling Purchase component */
+  .claim-container {
+    margin-top: 250px;
+    margin-bottom: 100px;
+  }
+
+  .chart-box {
+    max-width: 300px !important;
+  }
+}
+
+@media all and (min-width: 992px) {
+  /* Styling Purchase component */
+
+  /* Styling Footer component */
+  .footer {
+    margin-top: 320px;
+  }
+}
