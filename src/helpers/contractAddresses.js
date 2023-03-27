@@ -1,3 +1,3 @@
-export const saleAddress = "0xe5236b0e37cBEB6A7cb22b8f00B5433dDa977D5B";
+export const saleAddress = "0x170fb97Bc6Cddc32Bf4E2Dd5F8872A6dB8326047";
 
-export const fswapAddress = "0xcFE4C0783d103C44f403Bb287d29af0bAE5D4E84";
+export const fswapAddress = "0x676d1c682c861226443A1302885Cc595Fd2b0A50";

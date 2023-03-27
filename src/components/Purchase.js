@@ -27,9 +27,9 @@ const fswapContractInst = new web3Inst.eth.Contract(minABI, fswapAddress);
 
 function Purchase({ account, initWeb3, getBalances }) {
   const [amountBought, setAmountBought] = useState(0);
-  const [amountRemaining, setAmountRemaining] = useState(100);
+  const [amountRemaining, setAmountRemaining] = useState(0);
   const [claimPeriod, setClaimPeriod] = useState(0);
-  const [amountForPresale, setAmountForPresale] = useState(5100000);
+  const [amountForPresale, setAmountForPresale] = useState(30000000);
   const [canUserClaim, setCanUserClaim] = useState(false);
 
   const [errMessage, setErrMessage] = useState("");
@@ -68,10 +68,10 @@ function Purchase({ account, initWeb3, getBalances }) {
           message: "CORE Amount Must Be Greater Than Zero",
           custom: true,
         };
-      const isListed = await isWhiteListed(account);
-      if (isListed != true) {
-        throw { message: "You Are Not WhiteListed", custom: true };
-      }
+      // const isListed = await isWhiteListed(account);
+      // if (isListed != true) {
+      //   throw { message: "You Are Not WhiteListed", custom: true };
+      // }
 
       setIsLoading(true);
       const gasPrice = await initWeb3.eth.getGasPrice();
@@ -155,6 +155,14 @@ function Purchase({ account, initWeb3, getBalances }) {
         throw { message: "Please Change To The CORE Mainnet", custom: true };
       }
       const saleContract = new initWeb3.eth.Contract(saleABI, saleAddress);
+      // purchasedAmountPerUser
+      const migoBal = await saleContract.methods
+        .purchasedAmountPerUser(account)
+        .call();
+      const roundedMBal = Number((parseFloat(migoBal) / 10 ** 18).toFixed(5));
+      if (!(roundedMBal > 0)) {
+        throw { message: "You Have No Migo To Claim", custom: true };
+      }
       setClaimIsLoading(true);
       const claimReceipt = await saleContract.methods
         .claimTokens(account)
@@ -249,11 +257,11 @@ function Purchase({ account, initWeb3, getBalances }) {
         .call();
       //   const roundedBal = Number((parseFloat(bal) / 10 ** 18).toFixed(5));
       const roundedBought = Number(
-        (parseFloat(amntBought) / 10 ** 8).toFixed(5)
+        (parseFloat(amntBought) / 10 ** 18).toFixed(5)
       );
-      console.info("roundedBought: ", roundedBought);
+      // console.info("roundedBought: ", roundedBought);
       //5164025.
-      setAmountBought(2390000);
+      setAmountBought(roundedBought);
       setAmountRemaining(amountForPresale - roundedBought);
     }, 3000);
 
@@ -356,8 +364,7 @@ function Purchase({ account, initWeb3, getBalances }) {
 
       <div className="container customise-container">
         <div className="row customise-row">
-          {/* {amountRemaining > 0 && ( */}
-          {true && (
+          {amountRemaining > 0 && (
             <div className="col-md-4 col-lg-4 col-xl-4 chart-box">
               {/* <Doughnut data={data} options={Options} /> */}
               <CircularProgressbar
@@ -367,11 +374,11 @@ function Purchase({ account, initWeb3, getBalances }) {
             </div>
           )}
           <div className="min-max_desktop">
-            15 CORE minimum || 100 CORE maximum
+            1 CORE minimum || 10000 CORE maximum
           </div>
           <div className="min-max_mobile">
-            <p>15 CORE minimum</p>
-            <p>100 CORE maximum</p>
+            <p>1 CORE minimum</p>
+            <p>10000 CORE maximum</p>
           </div>
           <div className="rate-figure">1 CORE : 204 MIGO</div>
 
