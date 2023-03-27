@@ -259,7 +259,8 @@ function Purchase({ account, initWeb3, getBalances }) {
       const roundedBought = Number(
         (parseFloat(amntBought) / 10 ** 18).toFixed(5)
       );
-      // console.info("roundedBought: ", roundedBought);
+      console.info("roundedBought: ", roundedBought);
+      console.info("remaininig: ", amountForPresale - roundedBought);
       //5164025.
       setAmountBought(roundedBought);
       setAmountRemaining(amountForPresale - roundedBought);
@@ -368,8 +369,8 @@ function Purchase({ account, initWeb3, getBalances }) {
             <div className="col-md-4 col-lg-4 col-xl-4 chart-box">
               {/* <Doughnut data={data} options={Options} /> */}
               <CircularProgressbar
-                value={Math.floor((amountBought * 100) / amountForPresale)}
-                text={`${Math.floor((amountBought * 100) / amountForPresale)}%`}
+                value={(amountBought * 100) / amountForPresale}
+                text={`${(amountBought * 100) / amountForPresale}%`}
               />
             </div>
           )}
