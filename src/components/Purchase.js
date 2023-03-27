@@ -380,7 +380,7 @@ function Purchase({ account, initWeb3, getBalances }) {
             <p>1 CORE minimum</p>
             <p>10000 CORE maximum</p>
           </div>
-          <div className="rate-figure">1 CORE : 204 MIGO</div>
+          <div className="rate-figure">1 CORE : 250 MIGO</div>
 
           <div className="col-md-8 col-lg-8 col-xl-8">
             <div className="box-roadmap customise-purchase" data-aos="fade-up">
