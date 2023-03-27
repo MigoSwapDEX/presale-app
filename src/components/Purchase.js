@@ -370,7 +370,9 @@ function Purchase({ account, initWeb3, getBalances }) {
               {/* <Doughnut data={data} options={Options} /> */}
               <CircularProgressbar
                 value={(amountBought * 100) / amountForPresale}
-                text={`${(amountBought * 100) / amountForPresale}%`}
+                text={`${((amountBought * 100) / amountForPresale).toFixed(
+                  3
+                )}%`}
               />
             </div>
           )}
