@@ -377,7 +377,7 @@ function Purchase({ account, initWeb3, getBalances }) {
             </div>
           )}
           <div className="min-max_desktop">
-            1 CORE minimum || 10000 CORE maximum
+            1 CORE minimum || 1000 CORE maximum
           </div>
           <div className="min-max_mobile">
             <p>1 CORE minimum</p>
